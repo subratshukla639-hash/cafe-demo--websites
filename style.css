@@ -1,0 +1,242 @@
+/* Core Layout Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #4a3b32;
+    background-color: #fdfaf7;
+    line-height: 1.6;
+}
+
+/* Header & Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #2b1e16;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #dfb18a;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #dfb18a;
+}
+
+/* Hero Section with a Warm Background Tint */
+.hero-section {
+    height: 85vh;
+    background: linear-gradient(rgba(43, 30, 22, 0.75), rgba(43, 30, 22, 0.75)), 
+                url('https://images.unsplash.com/photo-1531752074002-abf991376d04?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #f7e6d4;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* Reusable Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #dfb18a;
+    color: #2b1e16;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #cd9f78;
+    transform: translateY(-2px);
+}
+
+/* Menu Section Grid */
+.menu-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.menu-section h2, .reserve-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.menu-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 5px solid #2b1e16;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card h3 {
+    margin-bottom: 10px;
+}
+
+/* Interactive pseudo-element showing price dynamically on hover */
+.menu-card::after {
+    content: attr(data-price);
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #cd9f78;
+    font-size: 1.2rem;
+}
+
+/* Reservation Form UI Layout */
+.reserve-section {
+    background-color: #f3eae1;
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.booking-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.booking-form input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #c8b7a6;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.hidden-message {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #2e7d32;
+    display: none;
+}
+
+/* Basic Footer Layout */
+footer {
+    background-color: #2b1e16;
+    color: #a8978c;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Navigation adjustments for Small Screen Mobile Devices */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out; /* Smooth movement */
+}
+menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0; /* Hides the middle bar */
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+
+
+@media(max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #2b1e16;
+        padding: 20px 0;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+    
+
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma Bliss Cafe</title>
+    <!-- Google Fonts for Clean Typography -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="logo">☕ AromaBliss</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reserve">Book Table</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        
+
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Start Your Day With Perfect Coffee</h1>
+            <p>Handcrafted artisan blends brewed passionately by our expert baristas to elevate your taste experience.</p>
+            <a href="#menu" class="btn">Explore Menu</a>
+        </div>
+    </section>
+
+    <!-- Interactive Menu Section -->
+    <section id="menu" class="menu-section">
+        <h2>Our Signature Brews</h2>
+        <div class="menu-grid">
+            <div class="menu-card" data-price="150 Rs">
+                <h3>Hazelnut Latte</h3>
+                <p>Rich espresso shot blended with creamy steamed milk and sweet hazelnut syrup.</p>
+            </div>
+            <div class="menu-card" data-price="200 Rs">
+                <h3>Classic Cappuccino</h3>
+                <p>Perfect harmony of intense espresso, silky steamed milk, and thick airy foam.</p>
+            </div>
+            <div class="menu-card" data-price="300 Rs">
+                <h3>Caramel Macchiato</h3>
+                <p>Freshly steamed milk stained with rich espresso and finished with sweet caramel drizzle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Booking Section -->
+    <section id="reserve" class="reserve-section">
+        <h2>Reserve A Table</h2>
+        <form id="booking-form" class="booking-form">
+            <input type="text" id="name" placeholder="Your Full Name" required>
+            <input type="email" id="email" placeholder="Your Email Address" required>
+            <input type="date" id="date" required>
+            <button type="submit" class="btn">Confirm Booking</button>
+        </form>
+        <div id="form-message" class="hidden-message"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Aroma Bliss Cafe. Crafted with passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
